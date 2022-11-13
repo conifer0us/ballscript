@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Updates camera position when mouse is right clicked and dragged. 
 public class EditorCamera : MonoBehaviour
 {    
     private GameObject parentObject;
@@ -27,7 +28,7 @@ public class EditorCamera : MonoBehaviour
     void Update()
     {
         Vector3 currentposition = Input.mousePosition;
-        if (Input.GetMouseButton(0) && currentposition != prevposition) {
+        if (Input.GetMouseButton(1) && currentposition != prevposition) {
             Vector3 posDif = prevposition - currentposition;
             movementDirection = posDif / posDif.magnitude;
             positionVelocity = Mathf.Clamp(posDif.magnitude, 0, 10);
