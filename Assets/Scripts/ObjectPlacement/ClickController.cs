@@ -6,7 +6,7 @@ using System;
 
 public class ClickController : MonoBehaviour
 {
-    private PlacementInterface placementObject = null;
+    public PlacementInterface placementObject = null;
     
     void Start(){}
 

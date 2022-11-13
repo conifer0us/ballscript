@@ -12,24 +12,15 @@ public abstract class BasicDataPlacement : PlacementInterface
 
     public GameObject Prefab;
 
-    private bool mouseClicked;
+    protected bool mouseClicked;
 
-    private bool previousMouseClicked;
+    protected bool previousMouseClicked;
 
     public virtual void onBeginPlacement() {}
 
-    public void processMouseInput(Vector3 mousePosition, bool mouseclicked) {
-        if (EventSystem.current.currentSelectedGameObject != null || mousePosition.y < -4.5) {
-            return;
-        }
-        if (previousMouseClicked && !mouseClicked) {
-            placeObject(mousePosition);
-        }
-        previousMouseClicked = mouseClicked;
-    }
+    public virtual void processMouseInput(Vector3 mousePosition, bool mouseclicked) {}
 
     public virtual void placeObject(Vector3 position) {
-        GameObject.Instantiate(Prefab, position, Quaternion.identity);
     }
 
     public virtual void onEndPlacement() {}

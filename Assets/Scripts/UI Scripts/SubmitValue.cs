@@ -7,9 +7,8 @@ using TMPro;
 
 public class SubmitValue : MonoBehaviour
 {
-    public BasicDataPlacement submitclass;
-
-    public void submitValue() {
-        submitclass.receiveValue(gameObject.GetComponent<TMP_InputField>().text);
+    public void submitValue(TMP_InputField field) {
+        BasicDataPlacement submitclass = (BasicDataPlacement) GameObject.Find("ScriptRunner").GetComponent<ClickController>().placementObject;
+        submitclass.receiveValue(field.text);
     }
 }
