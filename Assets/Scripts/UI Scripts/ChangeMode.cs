@@ -10,8 +10,9 @@ public class ChangeMode : MonoBehaviour
     PlacementInterface [] NameToScript = 
         {null, //None
         new PlacementScripts.IntBall(), //IntBall 
-        null, //FloatBall
-        new PlacementScripts.StringBall()}; //StringBall
+        new PlacementScripts.FloatBall(), //FloatBall
+        new PlacementScripts.StringBall(), //StringBall
+        new BoolBall()}; //BoolBall
 
     // Update is called once per frame
     public void changePlacementMode() {

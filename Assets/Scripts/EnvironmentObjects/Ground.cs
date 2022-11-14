@@ -24,4 +24,8 @@ public class Ground : MonoBehaviour
             parentObject.transform.localScale = tempScale;
         }
     }
+
+    void OnCollisionEnter2D(Collision2D col) {
+        GameObject.Destroy(col.collider.gameObject);
+    }
 }
