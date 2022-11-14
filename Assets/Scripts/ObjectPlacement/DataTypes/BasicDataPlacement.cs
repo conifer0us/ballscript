@@ -6,25 +6,14 @@ using PlacementScripts;
 using UnityEngine.EventSystems; 
 
 namespace PlacementScripts{
-public abstract class BasicDataPlacement : PlacementInterface 
+
+//Framing Class for Data Placement That Must Receive UI Input to set Values
+// Includes a receiveValue function to be used by UI elements and a placeObject function to transform the data into a physical element
+
+public interface BasicDataPlacement : PlacementInterface 
 {
-    public BasicDataPlacement() {}
+    public abstract void placeObject(Vector3 position);
 
-    public GameObject Prefab;
-
-    protected bool mouseClicked;
-
-    protected bool previousMouseClicked;
-
-    public virtual void onBeginPlacement() {}
-
-    public virtual void processMouseInput(Vector3 mousePosition, bool mouseclicked) {}
-
-    public virtual void placeObject(Vector3 position) {
-    }
-
-    public virtual void onEndPlacement() {}
-
-    public virtual void receiveValue(String value) {}
+    public abstract void receiveValue(String value);
 }
 }

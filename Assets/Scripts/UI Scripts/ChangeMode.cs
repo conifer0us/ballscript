@@ -9,7 +9,7 @@ public class ChangeMode : MonoBehaviour
 {
     PlacementInterface [] NameToScript = 
         {null, //None
-        new IntBall(), //IntBall 
+        new PlacementScripts.IntBall(), //IntBall 
         null, //FloatBall
         null}; //StringBall
 
