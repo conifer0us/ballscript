@@ -6,25 +6,24 @@ using System;
 using LanguageObjects;
 
 namespace LanguageObjects{
-    public class IntBall : MonoBehaviour, DataFunctionality<int>  {
+    public class StringBall : MonoBehaviour, DataFunctionality<String>  {
         public static float transferspeed = 20f;
 
-        private int data;
+        private String data;
 
-        public void placeObject(Vector3 direction, int val) {
+        public void placeObject(Vector3 direction, String val) {
             data = val;
             gameObject.GetComponent<Rigidbody2D>().velocity = direction / direction.magnitude * transferspeed;
-            String intString = val.ToString();
             TMP_Text textelement = gameObject.transform.Find("Canvas").transform.Find("Val").GetComponent<TMP_Text>();
-            if (intString.Length < 5) {
-                textelement.text = intString;
+            if (val.Length < 3) {
+                textelement.text = "'" + val + "'";
             } else {
-                textelement.text = intString.Substring(0,1) + "e" + (intString.Length - 1);
+                textelement.text = "'" + val.Substring(0,1) + "'~";
             }
             GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(null);
         }
 
-        public int getDataValue() {
+        public String getDataValue() {
             return data;
         }
     }

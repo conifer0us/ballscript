@@ -7,11 +7,11 @@ using System;
 using TMPro; 
 
 namespace PlacementScripts{
-public class IntBall : BasicDataPlacement
+public class StringBall : BasicDataPlacement
 {
-    public IntBall() {}
+    public StringBall() {}
 
-    public static String UIPrompt = "Int Value (0)";
+    public static String UIPrompt = "String Value ('')";
 
     private bool previousMouseClicked;
 
@@ -19,7 +19,7 @@ public class IntBall : BasicDataPlacement
 
     private GameObject CreatedUI;
 
-    private int val = 0;
+    private String val = "";
 
     public void onBeginPlacement() {
         UIPrefab = Resources.Load("Prefabs/UI/SingleTextData") as GameObject;
@@ -44,15 +44,15 @@ public class IntBall : BasicDataPlacement
     }
 
     public void placeObject(Vector3 position) {
-        GameObject IntBallPrefab = Resources.Load("Prefabs/Lang/Data/IntBall") as GameObject;
-        GameObject NewIntBall = UnityEngine.GameObject.Instantiate(IntBallPrefab, position, Quaternion.identity);
-        NewIntBall.GetComponent<LanguageObjects.IntBall>().placeObject(new Vector3(0, -1, 0), val);
+        GameObject BallPrefab = Resources.Load("Prefabs/Lang/Data/StringBall") as GameObject;
+        GameObject NewBall = UnityEngine.GameObject.Instantiate(BallPrefab, position, Quaternion.identity);
+        NewBall.GetComponent<LanguageObjects.StringBall>().placeObject(new Vector3(0, -1, 0), val);
     }
 
     public void receiveValue(String s) {
         try {
-            val = Int32.Parse(s);
-            String builttext = "Int Value (" + val.ToString() + ")";
+            val = s;
+            String builttext = "String Value ('" + val + "')";
             CreatedUI.transform.Find("Label").gameObject.GetComponent<TMP_Text>().SetText(builttext);
         } catch {}
     }

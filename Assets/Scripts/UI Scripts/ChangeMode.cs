@@ -11,7 +11,7 @@ public class ChangeMode : MonoBehaviour
         {null, //None
         new PlacementScripts.IntBall(), //IntBall 
         null, //FloatBall
-        null}; //StringBall
+        new PlacementScripts.StringBall()}; //StringBall
 
     // Update is called once per frame
     public void changePlacementMode() {
