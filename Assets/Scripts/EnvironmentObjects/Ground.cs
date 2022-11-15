@@ -26,6 +26,6 @@ public class Ground : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D col) {
-        GameObject.Destroy(col.collider.gameObject);
+        //GameObject.Destroy(col.collider.gameObject);
     }
 }

@@ -7,12 +7,19 @@ using TMPro;
 
 public class ChangeMode : MonoBehaviour
 {
-    PlacementInterface [] NameToScript = 
+    public PlacementInterface[] NameToScript;
+    
+    void Start() {
+        NameToScript = 
+        new PlacementInterface[6]
         {null, //None
         new PlacementScripts.IntBall(), //IntBall 
         new PlacementScripts.FloatBall(), //FloatBall
         new PlacementScripts.StringBall(), //StringBall
-        new BoolBall()}; //BoolBall
+        new BoolBall(), //BoolBall
+        new SimpleOperatorPlacement(Resources.Load("Prefabs/Lang/Operator/AddBlock") as GameObject) //AddBlock
+        }; 
+    }
 
     // Update is called once per frame
     public void changePlacementMode() {
