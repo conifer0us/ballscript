@@ -11,7 +11,7 @@ public class ChangeMode : MonoBehaviour
     
     void Start() {
         NameToScript = 
-        new PlacementInterface[14]
+        new PlacementInterface[15]
         {null, //None
         new PlacementScripts.IntBall(), //IntBall 
         new PlacementScripts.FloatBall(), //FloatBall
@@ -24,8 +24,9 @@ public class ChangeMode : MonoBehaviour
         new SimpleOperatorPlacement(Resources.Load("Prefabs/Lang/Operator/ModBlock") as GameObject), //ModBlock
         new Redirect(), // Redirect
         new Splitter(), //Splitter
-        null, //Teleporter
-        new Conditional()//Conditional
+        new Teleporter(), //Teleporter
+        new Conditional(), //Conditional
+        new SimpleOperatorPlacement(Resources.Load("Prefabs/Lang/Flow/Output") as GameObject) //Output
         }; 
     }
 

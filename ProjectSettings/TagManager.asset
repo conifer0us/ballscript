@@ -38,6 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: UI
+    uniqueID: 182357513
+    locked: 0
+  - name: Operators
+    uniqueID: 1447031803
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: DataBall
+    uniqueID: 3906279759
     locked: 0
