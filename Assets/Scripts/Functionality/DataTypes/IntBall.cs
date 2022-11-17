@@ -4,14 +4,14 @@ using TMPro;
 using System.Collections;
 using System; 
 using LanguageObjects;
+using Properties;
 
 namespace LanguageObjects{
     public class IntBall : MonoBehaviour, DataFunctionality<int>  {
-        public static float transferspeed = 20f;
-
         private int data;
 
         public void placeObject(Vector3 direction, int val) {
+            float transferspeed = DataProperties.dataspeed;
             data = val;
             gameObject.GetComponent<Rigidbody2D>().velocity = direction / direction.magnitude * transferspeed;
             String intString = val.ToString();
