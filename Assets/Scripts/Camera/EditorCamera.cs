@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 // Updates camera position when mouse is right clicked and dragged. 
 public class EditorCamera : MonoBehaviour
@@ -14,6 +15,12 @@ public class EditorCamera : MonoBehaviour
     private float positionVelocity = 0;
 
     private static int maxMagnitude = 10;
+
+    private static float maxOrthoSize = 10f;
+
+    private static float minOrthoSize = 4f;
+
+    private static int scrollsensitivity = 2;
 
     private static float movementFactor = 0.05f;
 
@@ -35,9 +42,19 @@ public class EditorCamera : MonoBehaviour
             if (posDif.magnitude > maxMagnitude) {
                 posDif = movementDirection * maxMagnitude;
             }
-            parentObject.transform.position += movementFactor * posDif;
+            parentObject.transform.position += movementFactor * posDif * gameObject.GetComponent<Camera>().orthographicSize / 5;
         } 
         
         prevposition = currentposition;
+
+        float mouseWheel = Input.GetAxis("Mouse ScrollWheel");
+
+        bool objectSelected = EventSystem.current.IsPointerOverGameObject();
+
+        if (!objectSelected && mouseWheel < 0 && gameObject.GetComponent<Camera>().orthographicSize < maxOrthoSize) {
+            gameObject.GetComponent<Camera>().orthographicSize += scrollsensitivity * 0.1f;
+        } else if (!objectSelected && mouseWheel > 0 && gameObject.GetComponent<Camera>().orthographicSize > minOrthoSize) {
+            gameObject.GetComponent<Camera>().orthographicSize -= scrollsensitivity * 0.1f;
+        }
     }
 }
