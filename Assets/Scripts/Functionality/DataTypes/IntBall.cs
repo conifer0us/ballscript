@@ -8,9 +8,13 @@ using Properties;
 
 namespace LanguageObjects{
     public class IntBall : MonoBehaviour, DataFunctionality<int>  {
+        private static String shortname = "IntBall";
+
+
         private int data;
 
         public void placeObject(Vector3 direction, int val) {
+            gameObject.name = shortname;
             float transferspeed = DataProperties.dataspeed;
             data = val;
             gameObject.GetComponent<Rigidbody2D>().velocity = direction / direction.magnitude * transferspeed;

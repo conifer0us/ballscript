@@ -8,11 +8,15 @@ using Properties;
 
 namespace LanguageObjects{
     public class StringBall : MonoBehaviour, DataFunctionality<String>  {
+        private static String shortname = "StringBall";
+        
         private String data;
 
         public void placeObject(Vector3 direction, String val) {
             float transferspeed = DataProperties.dataspeed;
             
+            gameObject.name = shortname;
+
             data = val;
             gameObject.GetComponent<Rigidbody2D>().velocity = direction / direction.magnitude * transferspeed;
             TMP_Text textelement = gameObject.transform.Find("Canvas").transform.Find("Val").GetComponent<TMP_Text>();

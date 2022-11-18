@@ -2150,7 +2150,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 125, y: 70}
-  m_SizeDelta: {x: 200, y: 130}
+  m_SizeDelta: {x: 180, y: 115}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1700951598
 MonoBehaviour:
@@ -2221,7 +2221,7 @@ MonoBehaviour:
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
-  m_enableExtraPadding: 0
+  m_enableExtraPadding: 1
   checkPaddingRequired: 0
   m_isRichText: 1
   m_parseCtrlCharacters: 1
@@ -2472,7 +2472,7 @@ GameObject:
   - component: {fileID: 2044279638}
   - component: {fileID: 2044279637}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: StackLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

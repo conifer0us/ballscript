@@ -8,10 +8,14 @@ using Properties;
 
 namespace LanguageObjects{
     public class BoolBall : MonoBehaviour, DataFunctionality<bool>  {
+        private static String shortname = "BoolBall";
+
         private bool data;
 
         public void placeObject(Vector3 direction, bool val) {
             float transferspeed = DataProperties.dataspeed;
+
+            gameObject.name = shortname;
 
             data = val;
             gameObject.GetComponent<Rigidbody2D>().velocity = direction / direction.magnitude * transferspeed;
