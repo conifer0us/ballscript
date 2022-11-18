@@ -731,7 +731,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1356567093}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.81333333
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1356,6 +1356,12 @@ MonoBehaviour:
     - m_Text: Conditional
       m_Image: {fileID: 0}
     - m_Text: Output
+      m_Image: {fileID: 0}
+    - m_Text: PushBlock
+      m_Image: {fileID: 0}
+    - m_Text: PopBlock
+      m_Image: {fileID: 0}
+    - m_Text: NegativeCheck
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
