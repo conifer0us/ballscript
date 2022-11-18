@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Properties;
+using LanguageObjects;
 
 namespace LanguageObjects{
 public class Splitter : MonoBehaviour
@@ -19,7 +20,18 @@ public class Splitter : MonoBehaviour
         Vector3 oneDirectionVelocity = diff_vector / diff_vector.magnitude * DataProperties.dataspeed;
         otherObject.GetComponent<Rigidbody2D>().velocity = oneDirectionVelocity;
         GameObject OppositeObject = GameObject.Instantiate(otherObject, gameObject.transform.position - diff_vector, Quaternion.identity);
-        OppositeObject.GetComponent<Rigidbody2D>().velocity = -1 * oneDirectionVelocity; 
+        if (otherObject.GetComponent<BoolBall>() != null) {
+            OppositeObject.GetComponent<BoolBall>().placeObject(-1 * oneDirectionVelocity, otherObject.GetComponent<BoolBall>().getDataValue());
+        }
+        else if (otherObject.GetComponent<IntBall>() != null) {
+            OppositeObject.GetComponent<IntBall>().placeObject(-1 * oneDirectionVelocity, otherObject.GetComponent<IntBall>().getDataValue());
+        }
+        else if (otherObject.GetComponent<FloatBall>() != null) {
+            OppositeObject.GetComponent<FloatBall>().placeObject(-1 * oneDirectionVelocity, otherObject.GetComponent<FloatBall>().getDataValue());
+        }
+        else if (otherObject.GetComponent<StringBall>() != null) {
+            OppositeObject.GetComponent<StringBall>().placeObject(-1 * oneDirectionVelocity, otherObject.GetComponent<StringBall>().getDataValue());
+        }
     }
 }
 }
