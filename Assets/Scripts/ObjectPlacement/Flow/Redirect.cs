@@ -53,6 +53,7 @@ public class Redirect : FlowPlacement
     }
 
     public void onEndPlacement() {
+        direction = 0; 
         UnityEngine.GameObject.Destroy(CreatedUI);
     }
 

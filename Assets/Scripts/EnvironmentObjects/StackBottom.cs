@@ -22,7 +22,7 @@ public class StackBottom : MonoBehaviour
         if (rectScale != prevscale) {
             float thisScale = (float)(rectScale.x / 2 + .5);
             gameObject.transform.localScale = new Vector3(thisScale, 1, 0);
-            gameObject.transform.position = new Vector3((float) (-1 * thisScale / 2 + 0.5), -7, 0);
+            gameObject.transform.position = new Vector3((float) (-1 * thisScale / 2 + 0.5), -7.5f, 0);
         }
         prevscale = rectScale;
     }

@@ -9,7 +9,7 @@ public class StackAPI : MonoBehaviour
     Stack<GameObject> memory;
 
     void Start() {
-        nextPlacementPosition = new Vector3(-1.5f, -6, 0); 
+        nextPlacementPosition = new Vector3(-1.5f, -6.25f, 0); 
         memory = new Stack<GameObject>();
     }
 
@@ -28,7 +28,7 @@ public class StackAPI : MonoBehaviour
     }
 
     private void moveObject(GameObject obj, Vector3 position, Vector3 velocity) {
-        obj.transform.position = position;
         obj.GetComponent<Rigidbody2D>().velocity = velocity;
+        obj.transform.position = position;
     }
 }

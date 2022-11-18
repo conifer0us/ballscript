@@ -21,7 +21,6 @@ namespace LanguageObjects{
             } else {
                 textelement.text = intString.Substring(0,1) + "e" + (intString.Length - 1);
             }
-            GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(null);
         }
 
         public int getDataValue() {

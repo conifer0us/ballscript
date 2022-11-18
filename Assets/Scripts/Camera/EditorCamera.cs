@@ -22,7 +22,7 @@ public class EditorCamera : MonoBehaviour
 
     private static int scrollsensitivity = 2;
 
-    private static float movementFactor = 0.05f;
+    private static float movementFactor = 0.025f;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +42,7 @@ public class EditorCamera : MonoBehaviour
             if (posDif.magnitude > maxMagnitude) {
                 posDif = movementDirection * maxMagnitude;
             }
-            parentObject.transform.position += movementFactor * posDif * gameObject.GetComponent<Camera>().orthographicSize / 5;
+            parentObject.transform.position += movementFactor * posDif;
         } 
         
         prevposition = currentposition;

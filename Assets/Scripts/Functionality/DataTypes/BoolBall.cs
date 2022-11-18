@@ -21,7 +21,6 @@ namespace LanguageObjects{
             } else {
                 textelement.text = "F";
             }
-            GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(null);
         }
 
         public bool getDataValue() {

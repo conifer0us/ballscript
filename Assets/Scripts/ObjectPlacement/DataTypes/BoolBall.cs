@@ -29,6 +29,7 @@ public class BoolBall : BasicDataPlacement
     }
 
     public void onEndPlacement() {
+        val = true;
         UnityEngine.Object.Destroy(CreatedUI);
     }
 

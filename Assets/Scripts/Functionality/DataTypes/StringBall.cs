@@ -21,7 +21,6 @@ namespace LanguageObjects{
             } else {
                 textelement.text = "'" + val.Substring(0,1) + "'~";
             }
-            GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(null);
         }
 
         public String getDataValue() {

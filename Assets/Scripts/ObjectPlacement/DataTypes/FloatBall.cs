@@ -29,6 +29,7 @@ public class FloatBall : BasicDataPlacement
     }
 
     public void onEndPlacement() {
+        val = 0; 
         UnityEngine.Object.Destroy(CreatedUI);
     }
 

@@ -29,6 +29,7 @@ public class StringBall : BasicDataPlacement
     }
 
     public void onEndPlacement() {
+        val = ""; 
         UnityEngine.Object.Destroy(CreatedUI);
     }
 

@@ -74,6 +74,7 @@ public class Teleporter : FlowPlacement
     }
 
     public void onEndPlacement() {
+        direction = 0; 
         if (placedTeleporter != null) {
             GameObject.Destroy(placedTeleporter);
         }

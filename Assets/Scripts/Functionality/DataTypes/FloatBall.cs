@@ -22,7 +22,6 @@ namespace LanguageObjects{
             } else {
                 textelement.text = floatString.Substring(0,3) + "~";
             }
-            GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(null);
         }
 
         public float getDataValue() {
