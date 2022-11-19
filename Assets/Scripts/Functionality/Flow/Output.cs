@@ -8,13 +8,6 @@ using TMPro;
 namespace LanguageObjects {
 public class Output : MonoBehaviour
 {
-
-    TMP_Text stdout;
-
-    void Start() {
-        stdout = GameObject.Find("stdout").GetComponent<TMP_Text>();
-    }
-
     void OnCollisionEnter2D(Collision2D collision) {
         GameObject other_object = collision.collider.gameObject;
         String data = null; 
@@ -34,7 +27,7 @@ public class Output : MonoBehaviour
     }
 
     public void printData(String data) {
-        stdout.text += data + "\n";
+        GameObject.Find("ScriptRunner").GetComponent<PrintToStdout>().placeLine(data);
     }
 }
 }
