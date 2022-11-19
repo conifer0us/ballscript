@@ -59,4 +59,8 @@ sysinfo.txt
 crashlytics-build.properties
 
 # Ignore development environment
-.vscode/*
+.vscode/
+
+# Ignore Build Location
+
+BuildLinux/
