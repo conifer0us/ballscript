@@ -10,7 +10,6 @@ public class NOT : MonoBehaviour
         GameObject otherObject = col.collider.gameObject;
         if (otherObject.GetComponent<BoolBall>() != null) {
             bool newVal = !(otherObject.GetComponent<BoolBall>().getDataValue());
-            Debug.Log(newVal.ToString());
             GameObject BallPrefab = Resources.Load("Prefabs/Lang/Data/BoolBall") as GameObject;
             GameObject NewBall = GameObject.Instantiate(BallPrefab, gameObject.transform.position - new Vector3(0, 1, 0), Quaternion.identity);
             NewBall.GetComponent<BoolBall>().placeObject(new Vector3(0, -1, 0), newVal);

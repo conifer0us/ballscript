@@ -50,7 +50,7 @@ public class Conditional : MonoBehaviour
         gameObject.transform.Find("Canvas").Find("Foreground").gameObject.GetComponent<SpriteRenderer>().color = colorFalse;
     }
 
-    private void setTrue() {
+    public void setTrue() {
         gameObject.transform.rotation = Quaternion.Euler(new Vector3(0,0,angletrue * 180 / Mathf.PI));
         gameObject.transform.Find("Canvas").Find("Foreground").gameObject.GetComponent<SpriteRenderer>().color = colorTrue;
     }
