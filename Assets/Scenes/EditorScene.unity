@@ -2046,6 +2046,8 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: NegativeCheck
       m_Image: {fileID: 0}
+    - m_Text: ZeroCheck
+      m_Image: {fileID: 0}
     - m_Text: NOT
       m_Image: {fileID: 0}
   m_OnValueChanged:

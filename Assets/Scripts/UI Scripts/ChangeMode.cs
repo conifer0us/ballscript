@@ -11,7 +11,7 @@ public class ChangeMode : MonoBehaviour
     
     void Start() {
         NameToScript = 
-        new PlacementInterface[21]
+        new PlacementInterface[22]
         {null, //None
         new Deletion(), //Deletion
         new IntBall(), //IntBall 
@@ -32,6 +32,7 @@ public class ChangeMode : MonoBehaviour
         new SimpleOperatorPlacement(Resources.Load("Prefabs/Lang/Flow/PushBlock") as GameObject), //PushBlock
         new SimpleOperatorPlacement(Resources.Load("Prefabs/Lang/Flow/PopBlock") as GameObject), //PopBlock
         new SimpleOperatorPlacement(Resources.Load("Prefabs/Lang/Operator/NegativeCheck") as GameObject), //NegativeCheck
+        new SimpleOperatorPlacement(Resources.Load("Prefabs/Lang/Operator/ZeroCheck") as GameObject), //ZeroCheck
         new SimpleOperatorPlacement(Resources.Load("Prefabs/Lang/Operator/NOT") as GameObject) //NOT Boolean Operator
         }; 
     }
