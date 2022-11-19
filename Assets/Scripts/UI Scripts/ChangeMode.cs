@@ -11,10 +11,11 @@ public class ChangeMode : MonoBehaviour
     
     void Start() {
         NameToScript = 
-        new PlacementInterface[20]
+        new PlacementInterface[21]
         {null, //None
         new Deletion(), //Deletion
         new IntBall(), //IntBall 
+        new IntVar(), //IntVar
         new FloatBall(), //FloatBall
         new StringBall(), //StringBall
         new BoolBall(), //BoolBall
